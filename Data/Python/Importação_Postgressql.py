@@ -14,9 +14,18 @@ db_port = '5433'
 connection_string = f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
 engine = create_engine(connection_string)
 
-# Definir as colunas esperadas nos arquivos CSV
-COLUMNS_ESCOLAS = [ ... ]
-COLUMNS_IDADE = [ ... ]
+# Definição das colunas corretas para os arquivos CSV
+COLUMNS_ESCOLAS = [
+    "DRE", "CODESC", "TIPOESC", "NOMES", "NOMESCOFI", "CEU", "DIRETORIA", "SUBPREF", "ENDERECO",
+    "NUMERO", "BAIRRO", "CEP", "TEL1", "TEL2", "FAX", "SITUACAO", "CODDIST", "DISTRITO", "SETOR",
+    "CODINEP", "CD_CIE", "EH", "FX_ETARIA", "DT_CRIACAO", "ATO_CRIACAO", "DOM_CRIACAO", "DT_INI_CONV",
+    "DT_AUTORIZA", "DT_EXTINCAO", "NOME_ANT", "REDE", "LATITUDE", "LONGITUDE", "DATABASE"
+]
+
+COLUMNS_IDADE = [
+    "dre", "codes", "tipoesc", "nomesc", "distrito", "setor", "ano", "rede", "modal", "descserie",
+    "periodo", "turno", "descturno", "sexo", "idade", "nee", "raca", "qtd", "database"
+]
 
 # Corrigir a codificação para UTF-8
 def convert_to_utf8(df):
